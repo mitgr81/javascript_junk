@@ -11,7 +11,7 @@ $(document).ready(function(){
             for (var textchar in text) {
                 var my_character = text.charAt(textchar),
                     $img = $('<img>');
-                $img.attr('src', 'static/images/lettercaps_letters/' + my_character + '.jpg');
+                $img.attr('src', 'static/images/lettercaps_letters/' + my_character.toLowerCase() + '.jpg');
                 $img.attr('alt', my_character);
                 $img.attr('title', my_character);
                 $echo.append($img);
