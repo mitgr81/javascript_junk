@@ -1,0 +1,11 @@
+html {
+    height: 100%;
+    background-color: #ffffff;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#afadf0));
+    background-image: -webkit-linear-gradient(top, #ffffff, #afadf0);
+    background-image:    -moz-linear-gradient(top, #ffffff, #afadf0);
+    background-image:      -o-linear-gradient(top, #ffffff, #afadf0);
+    background-image:         linear-gradient(to bottom, #ffffff, #afadf0);
+    font-family: Arial, Helvetica, sans-serif;
+
+}
