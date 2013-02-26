@@ -11,12 +11,22 @@
         padding-top: 40px;
         padding-bottom: 40px;
         background-color: #f5f5f5;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
       }
       .controls input{
         text-align: center;
       }
       .table {
         margin-top: 1.5em;
+      }
+      .header {
+        color: #08c;
+        min-width: 105px;
       }
 
     </style>
@@ -34,9 +44,12 @@
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
-                <th ng-class="{sorted: $index==columnSort.selectedIndex, reversed:columnSort.reverse}" ng-repeat="header in headers">
-                    <a ng-click="columnSort.sortColumn=fieldmap[$index]; columnSort.reverse=!columnSort.reverse; columnSort.selectedIndex=$index">{{ headers[$index] }}
-                    <i ng-show="$index==columnSort.selectedIndex" class="icon-arrow-{{columnSort.reverse && 'up' || 'down'}}"></i></a>
+                <th ng-class="{sorted: $index==columnSort.selectedIndex, reversed:columnSort.reverse}" class="header"
+                    ng-repeat="header in headers"
+                    ng-click="columnSort.sortColumn=fieldmap[$index]; columnSort.reverse=!columnSort.reverse; columnSort.selectedIndex=$index"
+                    right-click="columnFilter()">
+                    {{ headers[$index] }}
+                    <i ng-show="$index==columnSort.selectedIndex" class="icon-arrow-{{columnSort.reverse && 'up' || 'down'}}"></i>
                 </th>
             </tr>
         </thead>
