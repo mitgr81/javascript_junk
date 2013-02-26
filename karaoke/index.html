@@ -41,7 +41,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="song in songs | filter:search | orderBy:columnSort.sortColumn:columnSort.reverse">
+            <tr ng-repeat="song in songs | filter:search | orderBy:smartTableSorter:columnSort.reverse">
                 <td ng-repeat="val in song" ng-bind-html-unsafe="song[fieldmap[$index]]"></td>
             </tr>
         </tbody>

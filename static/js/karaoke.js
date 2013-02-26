@@ -7,12 +7,20 @@ function KaraokeCtrl($scope) {
     $scope.search = '';
   };
 
+  $scope.smartTableSorter = function(item) {
+    if(isNaN(item[$scope.columnSort.sortColumn]))
+      return item[$scope.columnSort.sortColumn];
+    return parseInt(item[$scope.columnSort.sortColumn], 10);
+
+  };
+
   $scope.toggleSort = function(index) {
     if($scope.sortColumn === $scope.headers[index]){
         $scope.reverse = !$scope.reverse;
     }
     $scope.sortColumn = $scope.headers[index];
     };
+
 
     $scope.columnSort = { sortColumn: 'title', reverse: false, selectedIndex: 0};
 
