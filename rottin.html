@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Message Decoder</title>
+
+  <link rel="stylesheet" href="static/css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="MessageCtrl">
+
+<label>Type the phrase you were given:<br/>
+    <input ng-change="rotateMessage()" ng-model="phrase" placeholder="Put the phrase here"/>
+</label>
+
+<br/>
+
+<label>Decode using Alphabet Offset:<br/>
+    <input ng-change="rotateMessage()" type="number" ng-model="decoder" min="-25" max="25"/>
+    <input ng-click="decoder = decoder * -1" type="button" value="Flip"/>
+</label>
+
+
+<br/>
+<label>Does it maybe say this?<br/>
+    <input ng-model="unlockedPhrase" readonly="readonly" />
+</label>
+
+<script src="static/js/rottin.js"></script>
+
+</body>
+</html>
